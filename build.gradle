@@ -30,15 +30,15 @@ dependencies {
 }
 
 group = 'com.example'
-version = '0.0.1'
-def artifactId = "spring-boot-common"
+version = '0.0.1_SNAPSHOT'
 sourceCompatibility = 1.8
 
 apply plugin: 'maven-publish'
+
 publishing {
 	publications {
 		maven(MavenPublication) {
-			artifact('build/libs/spring-boot-common-0.0.1-SNAPSHOT.jar') {
+			artifact("build/libs/${REPO_NAME}-${version}.jar") {
 				extension 'jar'
 			}
 		}
@@ -46,10 +46,10 @@ publishing {
 	repositories {
 	   	maven {
 		   	name 'nexus'
-		   	url repoUrl
+		   	url REPO_URL_SNAPSHOT
 		   	credentials {
-		   		username repoUser
-		   		password repoPassword
+		   		username REPO_USER
+		   		password REPO_PASSWORD
 		   	}
 	   	}
 	}
