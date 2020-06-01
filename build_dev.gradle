@@ -29,6 +29,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+archivesBaseName = REPO_NAME
 group = 'com.example'
 version = '0.0.1'
 sourceCompatibility = 1.8
